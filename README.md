@@ -130,4 +130,4 @@ mode: "development",
  
 
 
-git remote set-url origin https://LeonMher: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@github.com/LeonMher/UltimateReactTemplate.git
+git remote set-url origin https://LeonMher:accessToken@github.com/LeonMher/repoNameHere.git
