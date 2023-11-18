@@ -1,3 +1,18 @@
+import { useState } from "react";
+import "./styles.css";
+
 export const App = () => {
-  return <h1>React Template</h1>;
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <>
+      <h1>Edited React Template {process.env.name}</h1>
+      <p>{count}</p>
+      <button onClick={handleIncrement}>increment</button>
+    </>
+  );
 };
