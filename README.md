@@ -127,7 +127,66 @@ mode: "development",
 
 - add the start to our package json file that will trigger webpack to run our app locally
   "'start': 'webpack serve --config webpack/webpack.config.js --open'"
+
+  
+ ______________________________________________________________________________________________
+
  
+
+How to setup Webpack for dev and production versions?
+
+We are going to setup Webpack for both dev and prod environments in order to
+
+1. optimizations, in terms of the size for the prod environment
+2. custom envornment variables for both cases
+
+
+We'll have four files for this project
+
+- webpack.common.js //shared configs
+- webpack.config.js
+- webpack.dev.js //for dev env only
+- webpack.prod.js //for prod env only
+
+after configuring both dev and prod environments, we then need to install webpack-merge
+to share the prod or dev envs with webpack.common.js through webpack.config.js
+
+"npm i webpack-merge"
+
+- now in package.json we need to slightly change the start command and add a build command 
+  which will pass environment dev or prod and webpack will take care of the rest 
+
+"scripts": {
+    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",
+    "build": "webpack --config webpack/webpack.config.js --env env=prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+
+
+Now we can also pass custom environment variables trough plugins in dev and prod files of the
+webpack. To do so we need to specify the following code below
+
+
+const webpack = require("webpack");
+
+module.exports = {
+  mode: "production",
+  devtool: "source-map", //controls generation of source maps
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.name": JSON.stringify("ProdEnvironmentVariable"),
+    }),
+  ],
+};
+
+
+
+Then we can go ahead and build our app and run it locally as well.
+
+'npm run build' this will create the necessary files in the build folder and then
+we can cd to the build folder and run 'npx serve'
+
+
 
 
 git remote set-url origin https://LeonMher:accessToken@github.com/LeonMher/repoNameHere.git
