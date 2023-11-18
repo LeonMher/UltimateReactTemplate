@@ -10,7 +10,7 @@ export const App = () => {
 
   return (
     <>
-      <h1>Edited React Template {process.env.name}</h1>
+      <h1>Updated React Template {process.env.name}</h1>
       <p>{count}</p>
       <button onClick={handleIncrement}>increment</button>
     </>
