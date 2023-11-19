@@ -308,6 +308,54 @@ only that server has to handle it so it has to be veritcally scalabale
 
 
 
+______________________________________________________________________________
+
+REST API Explained
+
+REST 
+
+- is a style we can follow
+- HTTP Methods
+- Status Codes
+- Response Types
+
+
+HTTP Methods
+
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE 
+...
+
+
+Status codes
+
+- 1xx information responses
+- 2xx Successful Responses
+- 3xx Redirects
+- 4xx Client Errors
+- 5xx Server Errors
+
+
+Rest has some problems
+
+- guess the method
+- unknown data type can be retrieved or maybe status code
+
+GraphQL resolves these issues though
+
+
+What are the differences between REST and AJAX?
+
+AJAX is a collection of web technologies that allow for async web apps
+using the built in XML HTTP request object
+
+While REST API refers to an architechture for handling HTTP requests, Ajax
+refers to a collection of web technologies for making async web requests, this
+means that REST can handle Ajax clients and Ajax may be used to send restful requests
+but a REST API could never be implemented nor replaced by Ajax
 
 
 
