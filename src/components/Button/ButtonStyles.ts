@@ -15,3 +15,8 @@ export const StyledButton = styled.button`
   margin: 4px 2px;
   cursor: pointer;
 `;
+
+export const FancyButton = styled(StyledButton)`
+  border-radius: 50%;
+  background-color: red;
+`;

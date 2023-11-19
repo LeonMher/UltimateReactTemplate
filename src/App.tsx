@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles.css";
-import { Button } from "./components/Button/Button";
+import { Button, FancyButton } from "./components/Button/Button";
 export const App = () => {
   const [count, setCount] = useState(0);
 
@@ -15,6 +15,8 @@ export const App = () => {
       <Button onClick={handleIncrement} variant='outlined'>
         increment
       </Button>
+
+      <FancyButton as='a'>I am an A tag now</FancyButton>
     </>
   );
 };
