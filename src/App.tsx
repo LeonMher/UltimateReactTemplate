@@ -12,7 +12,9 @@ export const App = () => {
     <>
       <h1>Edited React Template {process.env.name}</h1>
       <p>{count}</p>
-      <Button onClick={handleIncrement}>increment</Button>
+      <Button onClick={handleIncrement} variant='outlined'>
+        increment
+      </Button>
     </>
   );
 };
