@@ -183,6 +183,64 @@ module.exports = {
 
 Then we can go ahead and build our app and run it locally as well.
 
+
+_____________________________________________________________________________
+
+
+Styled components
+
+
+Why styled components?
+
+- automatic critical CSS (feature)
+
+The library keeps track of which components are rendered on the screen and injects only
+their styles
+
+- no class name bugs (feature)
+
+the library generates unique classes 
+
+- dynamic styling (feature)
+
+We can pass props to our styled components and change the behavior of our component's style
+based on the passed props using functions
+
+
+example...
+
+export const StyledButton = styled.button`
+
+  background-color: ${(props) =>
+    props.variant === "outlined" ? "white" : "black"};
+  color: ${(props: any) => (props.variant === "outlined" ? "black" : "white")};
+  border: ${(props: any) =>
+    props.variant === "outlined" ? "black 1.5px solid" : "white"};
+ 
+`;
+
+
+
+We can also extend styled components like so (feature)
+
+example...
+
+export const FancyButton = styled(StyledButton)`
+  border-radius: 50%;
+  background-color: red;
+`;
+
+
+Polymorphic props (feature)
+
+There are polimorphic props as well in the styled components that turn the component to 
+some other element 
+
+like <FancyButton as='a'>I am an A tag now</FancyButton>
+
+
+
+
 'npm run build' this will create the necessary files in the build folder and then
 we can cd to the build folder and run 'npx serve'
 
