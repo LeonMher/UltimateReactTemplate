@@ -183,7 +183,8 @@ module.exports = {
 
 Then we can go ahead and build our app and run it locally as well.
 
-
+'npm run build' this will create the necessary files in the build folder and then
+we can cd to the build folder and run 'npx serve'
 _____________________________________________________________________________
 
 
@@ -241,8 +242,74 @@ like <FancyButton as='a'>I am an A tag now</FancyButton>
 
 
 
-'npm run build' this will create the necessary files in the build folder and then
-we can cd to the build folder and run 'npx serve'
+_______________________________________________________________________
+
+What are WebSockets? How is it different from HTTP?
+
+
+
+Http vs Websockets
+
+what happens when you type google.com? 
+
+after the DNS and Ip address has been figured out, the browser establishes a
+TCP connection between the client and the server
+
+The TCP connection is also called as Layer 4 protocol
+
+The Open Systems Interconnection (OSI) model describes seven layers 
+that computer systems use to communicate over a network. It was the
+first standard model for network communications, adopted by all major 
+computer and telecommunication companies in the early 1980s
+
+The modern Internet is not based on OSI, but on the simpler TCP/IP model. 
+However, the OSI 7-layer model is still widely used, as it helps visualize 
+and communicate how networks operate, and helps isolate and troubleshoot 
+networking problems.
+
+
+- Client sends the GET request along with headers 
+- server checks the TCP packets and finds the path and stuff
+- sends back the correct document (html css js files)
+
+
+Stateless:
+
+In a stateless system, each request from a client to a server is independent 
+and contains all the information needed for the server to fulfill that request. 
+The server does not retain any information about the client's previous requests or state.
+
+Stateful:
+
+In a stateful system, the server retains information about the client's state 
+and the context of the interaction. This allows for ongoing communication where
+each transaction can build upon the previous ones.
+
+
+
+HTTP
+
+So what HTTP does it only allows communication in a single direction
+The client speaks, and the server responses and vice versa 
+
+HTTP is stateless which means that every time client has to specify the headers (cookie auth header and so on)
+and it has to send all the headers to the server every time. It is good for scaling horizontally
+because each server can handle seperate requests
+
+TCP
+TCP on the other hand is a TWO WAY communication 
+The initial Websocket request is an http request that makes a handshake with the server
+asking whether the connection can be upgraded to a websocket? And if the server says yep 
+we can upgrade the connection to websocket then that particular thing actually happens
+And then it becomes like a phone call and it means it's fast.
+But this lacks in scalability because the if the client sends like 1k messages then 
+only that server has to handle it so it has to be veritcally scalabale 
+
+
+
+
+
+
 
 
 
